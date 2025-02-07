@@ -23,6 +23,13 @@ function Home() {
             </div>
         </section>
 
+        <section className="advantages">
+            <h2>Our Advantages</h2>
+            <div className='placeholder'>
+                <p>Advantages info</p>
+            </div>
+        </section>
+
         <section className="reviews">
             <h2>Reviews</h2>
             <div className='placeholder'>
