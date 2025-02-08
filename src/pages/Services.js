@@ -6,7 +6,7 @@ function Services() {
 
       <section className="services-list">
         <h1>Services</h1>
-        {['Airport Transfers', 'Business Transportation', 'Group or Family Travel', 'VIP and Luxury Services'].map((service, index) => (
+        {['Airport Transfers', 'Business Transportation', 'Group or Family Travel', 'VIP and Luxury Services', 'Lusaka Cultural Tour', 'Experiences'].map((service, index) => (
           <div className="room" key={index}>
             <div className="main-photo">
               <div className="photo-placeholder">Photo of the Service</div>
