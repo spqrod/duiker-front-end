@@ -11,7 +11,10 @@ import Events from './pages/Events';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import ScrollToTop from "./components/ScrollToTop";
-import './style.css';  // Import the combined styles here
+// import './style.css';  // Import the combined styles here
+import './styles/global.css';  
+import './styles/header.css';  
+import './styles/home.css';  
 
 function App() {
   return (

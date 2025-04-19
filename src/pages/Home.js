@@ -5,8 +5,26 @@ function Home() {
     <main className="home">
 
         <section className="hero">
-            <h1>Hero Section</h1>
-            <div className="placeholder">Hero image with a phrase</div>
+            <div className='contentContainer'>
+                <div className="textContainer">
+                    <p>
+                        At Duiker Travels, our vision is to be the leading provider of seamless travel experiences.
+                    </p>
+                    <p>
+                        Ensuring that every journey is not only safe and comfortable but also enriching. We are committed to offering unparalleled access to the beauty, culture, and diverse landscapes of Zambia. 
+                    </p>
+                    <p>
+                        Our goal is to inspire travelers to explore the heart of Zambia with confidence, knowing that they are supported by reliable services and expert guidance every step of the way. We strive to make each trip memorable, fostering a deep connection with Zambia’s rich heritage while promoting sustainable tourism and customer satisfaction.
+                    </p>
+                    <h3>
+                        Trusted. Professional. Experienced.
+                    </h3>
+                </div>
+
+
+            </div>
+
+
         </section>
 
         <section className="airport-pickup">
