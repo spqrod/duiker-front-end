@@ -21,14 +21,11 @@
     section {
       padding-top: var(--very-big-gap);
       padding-bottom: var(--very-big-gap);
-      background-color: #cfcea642;
     }
-  
-    .image {
-      border-radius: var(--border-radius);
-      width: 100%; /* Ensure images scale with container */
-      height: auto;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.46); 
+
+    button {
+        border: none;
+        box-shadow: none;
     }
 }
   
@@ -107,7 +104,7 @@
 
     --blue-light: #3B7AE1;
     --blue-dark: #25418E;
-    --accent-color: #FCC241;
+    --yellow: #FCC241;
 
     --normal-text: #000000;
 

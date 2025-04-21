@@ -3,6 +3,10 @@ import topRatedDestinationsVictoriaFalls from "../images/top-rated-destinations-
 import topRatedDestinationsSouthLuangwa from "../images/top-rated-destinations-south-luangwa.png";
 import topRatedDestinationsLowZambezi from "../images/top-rated-destinations-low-zambezi.png";
 import topRatedDestinationsKafue from "../images/top-rated-destinations-kafue.png";
+import services1 from "../images/services-1.jpg";
+import services2 from "../images/services-2.jpg";
+import services3 from "../images/services-3.jpg";
+import services4 from "../images/services-4.jpg";
 
 function Home() {
   return (
@@ -66,6 +70,74 @@ function Home() {
 
             </div>
 
+        </section>
+
+        <section className="our-services">
+            <h2>Our Services</h2>
+
+            <div className="content-container">
+
+                <div className="item-container">
+                    <div className="image-container">
+                        <img className="image" src={services1} alt="" />
+                    </div>
+                    <div className="text-container">
+                        <h3>Airport and Hotel Transfers</h3>
+                        <p>
+                            Enjoy pre-booked, private transportation to and from the airport with a professional driver. Perfect for business travelers, tourists, and groups. Our door-to-door services ensure and non-business a seamless journey to hotels, homes, business locations, or any locations as your choice.
+                        </p>
+                    </div>
+                    <button className='button'>
+                        Book Now
+                    </button>
+                </div>
+
+                <div className="item-container">
+                    <div className="image-container">
+                        <img className="image" src={services2} alt="" />
+                    </div>
+                    <div className="text-container">
+                        <h3>Vehicle chauffer services</h3>
+                        <p>
+                            Enjoy a stress free, luxury travel experience with our professional chauffeurs. Whether for business, leisure, or special occasions, we guarantee comfort, safety and convenience with expertly trained, drivers who have extensive local knowledge and experience.
+                        </p>
+                    </div>
+                    <button className='button'>
+                        Book Now
+                    </button>
+                </div>
+
+                <div className="item-container">
+                    <div className="image-container">
+                        <img className="image" src={services3} alt="" />
+                    </div>
+                    <div className="text-container">
+                        <h3>Event transportation</h3>
+                        <p>
+                            Ensure smooth and reliable transportation for your events with our private, group and VIP transports services. Whether its corporate function, wedding, concert or special occasion. We provide comfortable, on time travel with professional
+                        </p>
+                    </div>
+                    <button className='button'>
+                        Book Now
+                    </button>
+                </div>
+
+                <div className="item-container">
+                    <div className="image-container">
+                        <img className="image" src={services4} alt="" />
+                    </div>
+                    <div className="text-container">
+                        <h3>Daily/weekly booking in Zambia</h3>
+                        <p>
+                            Book daily or weekly transfers across Zambia for hassle-free travel. Whether you are a tourist business traveller, or local, our intra-city sightseeing and guided tours offer a deep dive into the city’s landmarks, culture, hidden gems – all with the convenience of knowledgeable guide or private transportation
+                        </p>
+                    </div>
+                    <button className='button'>
+                        Book Now
+                    </button>
+                </div>
+
+            </div>
         </section>
 
         <section className="airport-pickup">
