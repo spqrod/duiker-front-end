@@ -3,7 +3,7 @@
     top: 0;
     width: 100%;
     height: var(--header-height);
-    background-color: var(--blue-lighter);
+    background-color: var(--blue-light);
     z-index: 1000;
     display: flex;
     align-items: center;

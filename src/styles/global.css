@@ -50,7 +50,7 @@
 
     h2 {
         font-size: var(--h2-font-size);
-        text-align: center;
+        text-align: left;
         font-family: "font-1";
         font-weight: 600;
         padding-bottom: var(--big-gap);
@@ -105,8 +105,8 @@
     --border-white: 1px solid white;
     --border-black: 1px solid var(--normal-text);
 
-    --blue-lighter: #3B7AE1;
-    --blue-darker: #25418E;
+    --blue-light: #3B7AE1;
+    --blue-dark: #25418E;
     --accent-color: #FCC241;
 
     --normal-text: #000000;

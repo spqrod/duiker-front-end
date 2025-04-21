@@ -17,7 +17,6 @@
       padding-left: var(--side-padding-for-sections);
       padding-right: var(--side-padding-for-sections);
 
-      /* background-image: url("../images/hero-section-background-image.jpg"); */
       background: linear-gradient(rgba(0, 0, 0, 0.256), rgba(0, 0, 0, 0.335)), url('../images/hero-section-background-image.jpg'); /* Dark tint overlay */
       background-position: center;
       background-size: cover;
@@ -36,6 +35,90 @@
           color: var(--accent-color);
         }
 
+      }
+    }
+  }
+
+  .top-rated-destinations {
+    background-color: var(--blue-dark);
+
+    h2 {
+        color: var(--accent-color);
+    }
+
+    .content-container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        --photo-width: 80px; 
+        height: 300px;
+
+        .dashed-line {
+            position: absolute;
+            top: 0;
+            left: calc(var(--side-padding-for-sections) * (-1));
+            height: 100%;
+            width: 100vw;
+        }
+
+      .item-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--big-gap);
+
+        background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+        backdrop-filter: blur(5px); /* Slight blur effect for glass-like appearance */
+        border-radius: var(--big-gap); /* Rounded corners */
+        height: fit-content;
+        max-width: 250px; /* Adjust width as needed */
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3); /* Inset shadow for recessed effect */
+
+        p {
+          color: white;
+        }
+
+        .item-image {
+            width: var(--photo-width);
+            position: fixed;
+        }
+        
+        &.victoria-falls {
+            top: -20px;
+            
+            .item-image {
+                top: 0;
+                right: calc(var(--photo-width) / 2 * (-1));
+            }
+        }
+        
+        &.south-luangwa {
+            top: calc(var(--photo-width));
+            right: 100px;
+            .item-image {
+                top: calc(var(--photo-width) / 2 * (-1));
+                right: calc(var(--photo-width) / 2 * (-1));
+            }
+        }
+        
+        &.low-zambezi {
+            top: calc(var(--photo-width) * 0.8);
+            .item-image {
+                top: calc(var(--photo-width));
+                right: calc(var(--photo-width) / 3 * (-1));
+            }
+        }
+        
+        &.kafue {
+            top: -40px;
+            .item-image {
+                top: calc(var(--photo-width));
+                right: calc(var(--photo-width) / 3 * (-1));
+            }
+        }
+        
       }
     }
   }
