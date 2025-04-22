@@ -7,6 +7,7 @@ import services1 from "../images/services-1.jpg";
 import services2 from "../images/services-2.jpg";
 import services3 from "../images/services-3.jpg";
 import services4 from "../images/services-4.jpg";
+import reviewer1 from "../images/reviewer-1.png";
 
 function Home() {
   return (
@@ -138,6 +139,132 @@ function Home() {
                 </div>
 
             </div>
+        </section>
+
+        <section className="reviews">
+            <h2>Reviews</h2>
+
+            <div className="content-container">
+
+                <div className="review-card">
+                    <div className="stars-container">
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+
+                    </div>
+                    <p>
+                        This trip was one of the best in our lives, and the fact that we lived in this luxurious villa made it simply unforgettable! Thank you for giving us such a wonderful holiday, we will definitely come back to you again!
+                    </p>
+
+                    <div className='quote-icon'>
+                        <svg  width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.4086 15.5045H18.9504L21.9782 9.44882V0.365234H12.8947V9.44882H17.4364M2.29713 15.5045H6.83893L9.86679 9.44882V0.365234H0.783203V9.44882H5.325L2.29713 15.5045Z" fill="#25418E"/>
+                        </svg>
+                    </div>
+
+                    <div className="reviewer-container">
+                        <div className="image-container">
+                            <img className='reviewer-image' src={reviewer1} alt="" />
+                        </div>
+                        <p>
+                            Anthony Bruff
+                        </p>
+                    </div>
+                </div>
+
+                <div className="review-card">
+                    <div className="stars-container">
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+
+                    </div>
+                    <p>
+                        This trip was one of the best in our lives, and the fact that we lived in this luxurious villa made it simply unforgettable! Thank you for giving us such a wonderful holiday, we will definitely come back to you again!
+                    </p>
+
+                    <div className='quote-icon'>
+                        <svg  width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.4086 15.5045H18.9504L21.9782 9.44882V0.365234H12.8947V9.44882H17.4364M2.29713 15.5045H6.83893L9.86679 9.44882V0.365234H0.783203V9.44882H5.325L2.29713 15.5045Z" fill="#25418E"/>
+                        </svg>
+                    </div>
+
+                    <div className="reviewer-container">
+                        <div className="image-container">
+                            <img className='reviewer-image' src={reviewer1} alt="" />
+                        </div>
+                        <p>
+                            Anthony Bruff
+                        </p>
+                    </div>
+                </div>
+                
+                <div className="review-card">
+                    <div className="stars-container">
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.9177 12.3105L3.96973 7.76244L0.441376 4.70345L5.10269 4.29882L6.91542 0.00976562L8.72816 4.29882L13.3895 4.70345L9.86111 7.76244L10.9131 12.3105L6.91542 9.89887L2.9177 12.3105Z" fill="#FFCE31"/>
+                        </svg>
+
+                    </div>
+                    <p>
+                        This trip was one of the best in our lives, and the fact that we lived in this luxurious villa made it simply unforgettable! Thank you for giving us such a wonderful holiday, we will definitely come back to you again!
+                    </p>
+
+                    <div className='quote-icon'>
+                        <svg  width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.4086 15.5045H18.9504L21.9782 9.44882V0.365234H12.8947V9.44882H17.4364M2.29713 15.5045H6.83893L9.86679 9.44882V0.365234H0.783203V9.44882H5.325L2.29713 15.5045Z" fill="#25418E"/>
+                        </svg>
+                    </div>
+
+                    <div className="reviewer-container">
+                        <div className="image-container">
+                            <img className='reviewer-image' src={reviewer1} alt="" />
+                        </div>
+                        <p>
+                            Anthony Bruff
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
         </section>
 
         <section className="airport-pickup">

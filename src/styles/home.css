@@ -1,6 +1,7 @@
 .home {
 
   .hero {
+    display: none;
 
     margin-top: 0;
     padding-bottom: 0;
@@ -40,6 +41,7 @@
   }
 
   .top-rated-destinations {
+    display: none;
     background-color: var(--blue-dark);
 
     h2 {
@@ -71,7 +73,7 @@
 
         background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
         backdrop-filter: blur(5px); /* Slight blur effect for glass-like appearance */
-        border-radius: var(--big-gap); /* Rounded corners */
+        border-radius: var(--border-radius);
         height: fit-content;
         max-width: 250px; /* Adjust width as needed */
         box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3); /* Inset shadow for recessed effect */
@@ -124,6 +126,7 @@
   }
 
   .our-services {
+    display: none;
     background-color: var(--yellow);
     
     h2 {
@@ -145,7 +148,7 @@
 
             gap: var(--big-gap);
             background-color: white;
-            border-radius: 16px 0 0 16px;
+            border-radius: var(--border-radius);
             
             .image-container {
                 grid-column: 1 / 2;
@@ -155,7 +158,7 @@
                 max-width: 200px;
 
                 .image {
-                    border-radius: 16px;
+                    border-radius: var(--border-radius);
                     height: 100%;
                     width: auto;
                 }
@@ -180,6 +183,63 @@
                 color: white;
                 justify-self: end;
             }
+        }
+    }
+  }
+
+  .reviews {
+    background-color: var(--yellow);
+
+    h2 {
+        color: var(--blue-dark);
+    }
+
+    .content-container {
+        display: flex;
+        gap: var(--big-gap);
+        /* flex-wrap: wrap; */
+        justify-content: center;
+        
+        .review-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--medium-gap);
+            background-color: #fafafab5;
+            /* max-width: 350px; */
+            padding: var(--big-gap);
+            border-radius: var(--border-radius);
+            
+            .stars-container {
+                display: flex;
+                justify-content: end;
+                width: 100%;
+            }
+
+            .quote-icon {
+                width: 100%;
+                display: flex;
+                justify-content: end;
+            }
+
+            .reviewer-container {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                gap: var(--medium-gap);
+
+                .image-container {
+                    height: 50px;
+
+                    .reviewer-image {
+                        height: 100%;
+                    }
+                }
+            }
+            
+            * {
+                color: #454545;
+            }
+            
         }
     }
   }
