@@ -8,6 +8,11 @@ import services2 from "../images/services-2.jpg";
 import services3 from "../images/services-3.jpg";
 import services4 from "../images/services-4.jpg";
 import reviewer1 from "../images/reviewer-1.png";
+import { ReactComponent as AdvantageIcon1 } from "../images/advantage-icon-1.svg"; 
+import { ReactComponent as AdvantageIcon2 } from "../images/advantage-icon-2.svg"; 
+import { ReactComponent as AdvantageIcon3 } from "../images/advantage-icon-3.svg"; 
+import { ReactComponent as AdvantageIcon4 } from "../images/advantage-icon-4.svg"; 
+import { ReactComponent as AdvantageIcon5 } from "../images/advantage-icon-5.svg"; 
 
 function Home() {
   return (
@@ -75,7 +80,6 @@ function Home() {
 
         <section className="our-services">
             <h2>Our Services</h2>
-
 
             <div className='coffee-bean-container one'>
 
@@ -321,40 +325,81 @@ function Home() {
 
         </section>
 
-        <section className="airport-pickup">
-            <h2>Airport Transfer</h2>
-            <div className='placeholder'>
-                <p>Airport transfer general info</p>
-            </div>
-        </section>
-
-        <section className="other-services">
-            <h2>Other Services</h2>
-            <div className='placeholder'>
-                <p>Other services info</p>
-            </div>
-        </section>
-
         <section className="advantages">
+
             <h2>Our Advantages</h2>
-            <div className='placeholder'>
-                <p>Advantages info</p>
+
+            <div className="content-container">
+
+                <div className="advantage-container">
+                    <div className="icon-container">
+                        <AdvantageIcon1 />
+                    </div>
+                    <p className='name'>
+                        Reliable and Punctual
+                    </p>
+                    <p className='description'>
+                        – Always on time for stress-free travel
+                    </p>
+                </div>
+
+                <div className="advantage-container">
+                    <div className="icon-container">
+                        <AdvantageIcon2 />
+                    </div>
+                    <p className='name'>
+                        Professional Drivers 
+                    </p>
+                    <p className='description'>
+                        – Trained, uniformed, and courteous
+                    </p>
+                </div>
+
+                <div className="advantage-container">
+                    <div className="icon-container">
+                        <AdvantageIcon3 />
+                    </div>
+                    <p className='name'>
+                        Local Expertise
+                    </p>
+                    <p className='description'>
+                        – Drivers with in-depth knowledge
+                    </p>
+                </div>
+
+                <div className="advantage-container">
+                    <div className="icon-container">
+                        <AdvantageIcon4 />
+                    </div>
+                    <p className='name'>
+                        Flexible Booking
+                    </p>
+                    <p className='description'>
+                        – Daily, weekly and event-based options
+                    </p>
+                </div>
+
+                <div className="advantage-container">
+                    <div className="icon-container">
+                        <AdvantageIcon5 />
+                    </div>
+                    <p className='name'>
+                        Comfort and Safety
+                    </p>
+                    <p className='description'>
+                        – Well maintained vehicles for a smooth ride
+                    </p>
+                </div>
+
             </div>
+            
         </section>
 
-        <section className="reviews">
-            <h2>Reviews</h2>
-            <div className='placeholder'>
-                <p>Reviews section with customer photos, stars and recommendations</p>
-            </div>
-        </section>
 
-        <section className="reservation">
-            <h2>Reservation</h2>
-            <div className='placeholder'>
-                <p>Reservation form with dates and service type that sends a message to the administration</p>
-            </div>
-        </section>
+
+
+
+
 
     </main>
   );
