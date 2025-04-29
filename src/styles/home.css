@@ -1,7 +1,7 @@
 .home {
 
   .hero {
-    display: none;
+    
 
     margin-top: 0;
     padding-bottom: 0;
@@ -41,7 +41,7 @@
   }
 
   .top-rated-destinations {
-    display: none;
+    
     background-color: var(--blue-dark);
 
     h2 {
@@ -129,7 +129,7 @@
     background-color: var(--yellow);
     position: relative;
     z-index: 0;
-    display: none;
+    
 
     .coffee-bean-container {
         z-index: 1;
@@ -222,7 +222,7 @@
     background-color: var(--yellow);
     position: relative;
     z-index: 0;
-    display: none;
+    
 
     .coffee-bean-container {
         position: absolute;
@@ -297,7 +297,9 @@
   }
 
   .advantages {
-    display: none;
+    flex: 1;
+    position: relative;
+    
     background-color: var(--blue-dark);
 
     h2 {

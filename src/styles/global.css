@@ -39,7 +39,8 @@
         transition: background-color var(--transition);
 
         &:hover {
-            background-color: var(--yellow-2);
+            background-color: var(--blue-dark);
+            color: white;
         }
     }
 }

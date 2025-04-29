@@ -396,18 +396,11 @@ function Home() {
             
         </section>
 
-
         <section className="reservation">
-
             <h2>Reservation</h2>
 
             <ReservationForm />
-
-
         </section>
-
-
-
 
     </main>
   );

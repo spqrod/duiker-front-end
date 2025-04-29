@@ -21,7 +21,9 @@ function Header() {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/reserve" className="reserve-button">Reserve</Link>
+            <button className='button'>
+                <Link to="/reserve">Reserve</Link>
+            </button>
           </li>
         </ul>
       </nav>
