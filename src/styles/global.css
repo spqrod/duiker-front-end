@@ -26,6 +26,21 @@
     button {
         border: none;
         box-shadow: none;
+
+        width: 200px;
+        padding: var(--medium-gap);
+        background-color: var(--yellow);
+        border-radius: var(--border-radius);
+        color: black;
+        font-size: var(--body-font-size);
+        font-family: "font-2";
+        font-weight: 300;
+        cursor: pointer;
+        transition: background-color var(--transition);
+
+        &:hover {
+            background-color: var(--yellow-2);
+        }
     }
 }
   
@@ -93,7 +108,7 @@
     --h1-font-size: 53px;
     --h2-font-size: 46px;
     --h3-font-size: 24px;
-    --body-font-size: 18px;
+    --body-font-size: 16px;
 
     --transition: 0.3s;
     --border: 0.5px solid black;

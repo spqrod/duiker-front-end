@@ -1,0 +1,212 @@
+.reservation-form {
+
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    .form-container {
+        max-width: 850px;
+        background-color: var(--blue-dark);
+        padding: var(--big-gap);
+        border-radius: var(--border-radius);
+        display: flex;
+        flex-direction: column;
+        gap: var(--big-gap);
+    }
+  
+    .form-row {
+        /* animation: fadeIn 1s ease-out; */
+
+        input, select, textarea {
+            padding: var(--medium-gap);
+            border: var(--border-white);
+            border-radius: var(--border-radius);
+            background-color: transparent;
+            color: white;
+            font-size: var(--body-font-size);
+            font-family: "font-2";
+            font-weight: 300;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: white;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+
+        .label-and-line-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--small-gap);
+
+            h3 {
+                color: white;
+                padding-right: var(--medium-gap);
+                flex-shrink: 0;
+            }
+
+            .line {
+                width: 100%;
+                height: 1px;
+                background-color: white;
+            }
+
+            .circle {
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: white;
+            }
+        }
+
+        &.personal-details {
+
+            .label {
+                color: white;
+            }
+
+            .inputs-container {
+                display: flex;
+                align-items: center;
+                gap: var(--big-gap);
+
+                .input-container {
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+
+                    input {
+                        flex: 1;
+                    }
+                }
+            }
+
+        }
+
+        &.payment-method {
+
+            .radio-group {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                column-gap: var(--medium-gap);
+                row-gap: 0;
+
+                label {
+                    display: flex;
+                    align-items: center;
+                    gap: var(--small-gap);
+                    font-size: var(--body-font-size);
+                    font-family: "font-2";
+                    font-weight: 300;
+                    color: white;
+                }
+
+                input[type="radio"] {
+                    appearance: none;
+                    user-select: none;
+                    width: 20px;
+                    height: 20px;
+                    border: var(--border-white);
+                    border-radius: 50%;
+                    position: relative;
+                    cursor: pointer;
+
+                    &:checked::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 10px;
+                        height: 10px;
+                        background-color: white;
+                        border-radius: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                @media (max-width: 480px) {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+
+        &.service-type {
+
+            select {
+                /* appearance: none; */
+                background-repeat: no-repeat;
+            }
+        }
+
+        &.pick-up {
+
+            .label {
+                color: white;
+            }
+
+            .inputs-container {
+                /* display: flex; */
+                /* align-items: center; */
+                /* flex-wrap: wrap; */
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: var(--big-gap);
+
+                .label-and-input-container {
+
+                    display: flex;
+                    justify-content: start;
+                    gap: var(--big-gap);
+                    align-items: center;
+
+                    label {
+                        flex-shrink: 0;
+                    }
+                }
+            }
+        }
+
+        &.special-requests {
+            .label-and-input-container {
+                display: flex;
+                align-items: center;
+                gap: var(--big-gap);
+
+                label {
+                    color: white;
+                }
+
+                textarea {
+                    min-width: 400px;
+                }
+            }
+        }
+    }
+    
+    .button-container {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+    }
+}
+
+/* @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */

@@ -297,6 +297,7 @@
   }
 
   .advantages {
+    display: none;
     background-color: var(--blue-dark);
 
     h2 {
@@ -346,6 +347,18 @@
     }
 
   }
+
+  .reservation {
+    background: url('../images/reservation-background.jpg');
+    background-size: cover;
+    background-position: center;
+
+    h2 {
+        color: white;
+        text-align: center;
+    }
+  }
+
 }
 
 

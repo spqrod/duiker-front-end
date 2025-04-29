@@ -13,6 +13,7 @@ import { ReactComponent as AdvantageIcon2 } from "../images/advantage-icon-2.svg
 import { ReactComponent as AdvantageIcon3 } from "../images/advantage-icon-3.svg"; 
 import { ReactComponent as AdvantageIcon4 } from "../images/advantage-icon-4.svg"; 
 import { ReactComponent as AdvantageIcon5 } from "../images/advantage-icon-5.svg"; 
+import ReservationForm from "../components/ReservationForm.js"; 
 
 function Home() {
   return (
@@ -396,7 +397,14 @@ function Home() {
         </section>
 
 
+        <section className="reservation">
 
+            <h2>Reservation</h2>
+
+            <ReservationForm />
+
+
+        </section>
 
 
 
