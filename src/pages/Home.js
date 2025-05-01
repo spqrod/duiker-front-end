@@ -18,7 +18,7 @@ import ReservationForm from "../components/ReservationForm.js";
 function Home() {
   return (
     <main className="home">
-{/* 
+
         <section className="hero">
             <div className='contentContainer'>
                 <div className="textContainer">
@@ -400,7 +400,7 @@ function Home() {
             <h2>Reservation</h2>
 
             <ReservationForm />
-        </section> */}
+        </section> 
 
     </main>
   );

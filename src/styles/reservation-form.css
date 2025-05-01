@@ -4,6 +4,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 2;
     
     .form-container {
         max-width: 850px;
