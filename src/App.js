@@ -11,6 +11,7 @@ import Events from './pages/Events';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import ScrollToTop from "./components/ScrollToTop";
+import WhatsAppButton from './components/WhatsAppButton';
 // import './style.css';  // Import the combined styles here
 import './styles/global.css';  
 import './styles/header.css';  
@@ -33,9 +34,9 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
       </Routes>    
+      <WhatsAppButton />
       <Footer />
     </HashRouter>
-
 
     // </Router>
   );

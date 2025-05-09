@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    user-select: none;
 
     & .logo-link {
         display: flex;
@@ -57,7 +58,6 @@
 
         display: block;
         cursor: pointer;
-        user-select: none;
 
         @media only screen and (max-width: 480px) {
             padding: 0.5rem;

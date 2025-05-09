@@ -1,0 +1,35 @@
+.contact {
+
+    .form-and-contacts {
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--big-gap);
+        align-items: center;
+        
+        .contacts-container {
+
+            gap: var(--big-gap);
+            display: flex;
+
+            a {
+                text-decoration: none;
+            }
+
+        }
+        
+        .social-media-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--big-gap);
+
+            .link {
+                svg {
+                    max-width: 32px;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

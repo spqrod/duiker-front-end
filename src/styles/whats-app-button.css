@@ -1,0 +1,20 @@
+.whats-app-button-container {
+    position: fixed;
+    width: 48px;
+    height: 48px;
+    bottom: 48px;
+    right: calc(var(--side-padding-for-sections));
+    opacity: 0; /* Start hidden */
+    transform: scale(0.8); /* Start slightly smaller */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth transition */
+  
+    &.visible {
+      opacity: 1; /* Fade in */
+      transform: scale(1); /* Scale to full size */
+    }
+  
+    img {
+      width: 100%;
+      box-shadow: var(--box-shadow);
+    }
+  }
