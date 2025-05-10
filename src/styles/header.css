@@ -27,12 +27,12 @@
         align-items: center;
 
         .button {
-            a {
+            a, p {
                 color: black;
 
             }
             &:hover {
-                a {
+                a, p {
                     color: white;
                 }
             }

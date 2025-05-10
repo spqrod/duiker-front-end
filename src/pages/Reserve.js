@@ -1,22 +1,16 @@
 import React from 'react';
+import ReservationForm from "../components/ReservationForm.js"; 
+import "../styles/reserve.css";
 
 function Reserve() {
   return (
     <main className="reserve">
 
-      <section className="reservationForm">
-        <h1>Reservation Form</h1>
-        <div className="form placeholder">
-            <p>Reservation form with dates and service type that sends a message to the administration</p>
-        </div>
-      </section>
+        <section className="reservation">
+            <h1>Reservation</h1>
 
-      <section className="reservationRules">
-        <h2>Reservation Rules</h2>
-        <div className="form placeholder">
-            <p>Reservation rules info</p>
-        </div>
-      </section>
+            <ReservationForm />
+        </section> 
 
     </main>
   );

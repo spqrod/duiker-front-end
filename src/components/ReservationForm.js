@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/reservation-form.css';
 import {useState} from "react";
-// import background from '../images/reservation-background.jpg';
 
 function ReservationForm() {
 
@@ -224,13 +223,11 @@ function ReservationForm() {
 
             {/* {isPickUpDetailsFilled && ( */}
             <div className="button-container">
-                <button type="button" className="submit-button">RESERVE</button>
+                <button type="button" className="button">Reserve</button>
             </div>        
             {/* )} */}
 
         </div>
-
-
 
     </div>
   );

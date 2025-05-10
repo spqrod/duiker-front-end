@@ -1,13 +1,24 @@
 /* Global */
 
+body {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+  }
+  
+  body.fade-out {
+    opacity: 0;
+  }
+  
+  body.fade-in {
+    opacity: 1;
+  }
+
 *, *::after, *::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 
-    body {
-      overflow-x: clip;
-    }
+
   
     section {
       overflow-x: clip;
@@ -59,6 +70,7 @@
         font-family: "font-1";
         font-weight: 600;
         padding-bottom: var(--big-gap);
+        user-select: none;
     }
 
     h2 {
@@ -67,6 +79,7 @@
         font-family: "font-1";
         font-weight: 600;
         padding-bottom: var(--big-gap);
+        user-select: none;
     }
 
     h3 {
@@ -117,6 +130,8 @@
     --border-radius: 16px;
     --border-white: 1px solid white;
     --border-black: 1px solid var(--normal-text);
+
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.237);
 
     --blue-light: #3B7AE1;
     --blue-dark: #25418E;

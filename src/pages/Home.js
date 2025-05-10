@@ -19,7 +19,8 @@ function Home() {
   return (
     <main className="home">
 
-        <section className="hero">
+        <section className="hero" >
+            <div id='hero-section-target-for-scroll'></div>
             <div className='contentContainer'>
                 <div className="textContainer">
                     <p>
@@ -34,6 +35,13 @@ function Home() {
                     <h3>
                         Trusted. Professional. Experienced.
                     </h3>
+                    <button 
+                        className='button' 
+                        onClick={() => {
+                            document.getElementById('reservation-target-for-scroll').scrollIntoView({ behavior: 'smooth' });
+                        }}>
+                        Reserve Now
+                    </button>
                 </div>
             </div>
 
@@ -134,7 +142,11 @@ function Home() {
                             Enjoy pre-booked, private transportation to and from the airport with a professional driver. Perfect for business travelers, tourists, and groups. Our door-to-door services ensure and non-business a seamless journey to hotels, homes, business locations, or any locations as your choice.
                         </p>
                     </div>
-                    <button className='button'>
+                    <button 
+                        className='button' 
+                        onClick={() => {
+                            document.getElementById('reservation-target-for-scroll').scrollIntoView({ behavior: 'smooth' });
+                        }}>
                         Book Now
                     </button>
                 </div>
@@ -149,7 +161,11 @@ function Home() {
                             Enjoy a stress free, luxury travel experience with our professional chauffeurs. Whether for business, leisure, or special occasions, we guarantee comfort, safety and convenience with expertly trained, drivers who have extensive local knowledge and experience.
                         </p>
                     </div>
-                    <button className='button'>
+                    <button 
+                        className='button'
+                        onClick={() => {
+                            document.getElementById('reservation-target-for-scroll').scrollIntoView({ behavior: 'smooth' });
+                        }}>
                         Book Now
                     </button>
                 </div>
@@ -164,7 +180,11 @@ function Home() {
                             Ensure smooth and reliable transportation for your events with our private, group and VIP transports services. Whether its corporate function, wedding, concert or special occasion. We provide comfortable, on time travel with professional
                         </p>
                     </div>
-                    <button className='button'>
+                    <button 
+                        className='button'
+                        onClick={() => {
+                            document.getElementById('reservation-target-for-scroll').scrollIntoView({ behavior: 'smooth' });
+                    }}>
                         Book Now
                     </button>
                 </div>
@@ -179,7 +199,11 @@ function Home() {
                             Book daily or weekly transfers across Zambia for hassle-free travel. Whether you are a tourist business traveller, or local, our intra-city sightseeing and guided tours offer a deep dive into the city’s landmarks, culture, hidden gems – all with the convenience of knowledgeable guide or private transportation
                         </p>
                     </div>
-                    <button className='button'>
+                    <button 
+                        className='button'
+                        onClick={() => {
+                            document.getElementById('reservation-target-for-scroll').scrollIntoView({ behavior: 'smooth' });
+                    }}>
                         Book Now
                     </button>
                 </div>
@@ -397,6 +421,7 @@ function Home() {
         </section>
 
         <section className="reservation">
+            <div id="reservation-target-for-scroll"></div>
             <h2>Reservation</h2>
 
             <ReservationForm />

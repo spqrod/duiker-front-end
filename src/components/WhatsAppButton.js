@@ -8,9 +8,9 @@ function WhatsAppButton() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 1000); // 2-second delay
+    }, 1000); 
 
-    return () => clearTimeout(timer); // Cleanup on unmount
+    return () => clearTimeout(timer); 
   }, []);
 
   return (
