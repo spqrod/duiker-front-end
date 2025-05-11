@@ -1,4 +1,6 @@
 import React from 'react';
+import Transition from '../components/Transition.js';
+
 
 function Privacy() {
   return (
@@ -13,4 +15,4 @@ function Privacy() {
   );
 }
 
-export default Privacy;
+export default Transition(Privacy);

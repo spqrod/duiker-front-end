@@ -21,16 +21,6 @@ function Header() {
     }
   };
 
-  const handleLinkClick = (e, path) => {
-    e.preventDefault();
-    document.body.classList.add('fade-out');
-    setTimeout(() => {
-      navigate(path);
-      document.body.classList.remove('fade-out', 'fade-in'); // Reset all classes
-      void document.body.offsetHeight; // Force reflow to restart transition
-      document.body.classList.add('fade-in'); // Trigger fade-in
-    }, 300);
-  };
 
   return (
     <header className="header">
@@ -40,17 +30,17 @@ function Header() {
       <nav className="nav" role="navigation">
         <ul>
           <li>
-            <Link to="/services" onClick={(e) => handleLinkClick(e, '/services')}>
+            <Link to="/services" >
               Services
             </Link>
           </li>
           <li>
-            <Link to="/about" onClick={(e) => handleLinkClick(e, '/about')}>
+            <Link to="/about" >
               About
             </Link>
           </li>
           <li>
-            <Link to="/contact" onClick={(e) => handleLinkClick(e, '/contact')}>
+            <Link to="/contact">
               Contact
             </Link>
           </li>

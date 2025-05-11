@@ -1,6 +1,7 @@
 import React from 'react';
 import ReservationForm from "../components/ReservationForm.js"; 
 import "../styles/reserve.css";
+import Transition from '../components/Transition.js';
 
 function Reserve() {
   return (
@@ -16,4 +17,4 @@ function Reserve() {
   );
 }
 
-export default Reserve;
+export default Transition(Reserve);

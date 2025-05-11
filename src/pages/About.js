@@ -1,5 +1,7 @@
 import React from 'react';
 import "../styles/about.css";
+import Transition from '../components/Transition.js';
+
 
 function About() {
   return (
@@ -113,4 +115,4 @@ function About() {
   );
 }
 
-export default About;
+export default Transition(About);

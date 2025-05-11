@@ -1,4 +1,5 @@
 import React from 'react';
+import Transition from '../components/Transition.js';
 
 function Events() {
   return (
@@ -41,4 +42,4 @@ function Events() {
   );
 }
 
-export default Events;
+export default Transition(Events);

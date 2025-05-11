@@ -5,6 +5,8 @@ import services3 from "../images/services-3.jpg";
 import services4 from "../images/services-4.jpg";
 import ReservationForm from "../components/ReservationForm.js"; 
 import '../styles/services.css';
+import Transition from '../components/Transition.js';
+
 
 
 function Services() {
@@ -128,4 +130,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default Transition(Services);

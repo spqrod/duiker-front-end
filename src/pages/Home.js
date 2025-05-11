@@ -14,9 +14,12 @@ import { ReactComponent as AdvantageIcon3 } from "../images/advantage-icon-3.svg
 import { ReactComponent as AdvantageIcon4 } from "../images/advantage-icon-4.svg"; 
 import { ReactComponent as AdvantageIcon5 } from "../images/advantage-icon-5.svg"; 
 import ReservationForm from "../components/ReservationForm.js"; 
+import Transition from '../components/Transition.js';
 
 function Home() {
+
   return (
+
     <main className="home">
 
         <section className="hero" >
@@ -428,7 +431,8 @@ function Home() {
         </section> 
 
     </main>
+
   );
 }
 
-export default Home;
+export default Transition(Home);

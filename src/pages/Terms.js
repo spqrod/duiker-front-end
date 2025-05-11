@@ -1,4 +1,6 @@
 import React from 'react';
+import Transition from '../components/Transition.js';
+
 
 function Terms() {
   return (
@@ -13,4 +15,4 @@ function Terms() {
   );
 }
 
-export default Terms;
+export default Transition(Terms);

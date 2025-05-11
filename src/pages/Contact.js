@@ -4,9 +4,11 @@ import "../styles/contact.css"
 import { ReactComponent as InstagramIcon } from "../images/instagram.svg";
 import { ReactComponent as FacebookIcon } from "../images/facebook.svg";
 import { ReactComponent as WhatsappIcon } from "../images/whatsapp.svg";
+import Transition from '../components/Transition.js';
 
 function Contact() {
   return (
+
     <main className="contact">
 
       <section className="form-and-contacts">
@@ -50,7 +52,8 @@ function Contact() {
       </section> */}
       
     </main>
+
   );
 }
 
-export default Contact;
+export default Transition(Contact);

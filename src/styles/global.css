@@ -1,18 +1,5 @@
 /* Global */
 
-body {
-    transition: opacity 0.3s ease;
-    opacity: 1;
-  }
-  
-  body.fade-out {
-    opacity: 0;
-  }
-  
-  body.fade-in {
-    opacity: 1;
-  }
-
 *, *::after, *::before {
     box-sizing: border-box;
     margin: 0;
@@ -55,7 +42,7 @@ body {
         }
     }
 }
-  
+
 /* TYPOGRAPHY */
 
 * {
@@ -164,4 +151,3 @@ body {
         --side-padding-for-sections: 8vw;
     }
 }
-
