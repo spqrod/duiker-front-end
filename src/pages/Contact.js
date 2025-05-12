@@ -28,6 +28,11 @@ function Contact() {
                 info@duikertravels.com
             </a>
         </div>
+
+        <div className="line-container">
+            <div className="line"></div>
+            <div className="circle"></div>
+        </div>
         
         <div className="social-media-container">
             {/* TO ADD */}

@@ -8,7 +8,7 @@
     z-index: 2;
     
     .form-container {
-        max-width: 850px;
+        width: 850px;
         background-color: var(--blue-dark);
         padding: var(--big-gap);
         border-radius: var(--border-radius);

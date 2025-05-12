@@ -10,7 +10,7 @@
     justify-content: space-between;
     user-select: none;
 
-    & .logo-link {
+    .logo-link {
         display: flex;
         align-items: center;
 
@@ -19,61 +19,126 @@
         }
     }
 
-    & ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        align-items: center;
+    .menu-container {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: var(--big-gap);
 
-        .button {
-            a, p {
-                color: black;
-
+            .menu-link {
+                text-decoration: none;
+                color: white;
+        
+                display: block;
+                cursor: pointer;
             }
-            &:hover {
+    
+            .button {
                 a, p {
-                    color: white;
+                    text-decoration: none;
+                    display: block;
+                    cursor: pointer;
+                    color: black;
+    
+                }
+                &:hover {
+                    a, p {
+                        color: white;
+                    }
                 }
             }
-        }
-
-        @media only screen and (min-width: 481px) {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        @media only screen and (max-width: 480px) {
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            width: 100%;
-        }
     }
 
-    & li a {
-        text-decoration: none;
-        color: white;
-
-        display: block;
-        cursor: pointer;
-
-        @media only screen and (max-width: 480px) {
-            padding: 0.5rem;
-            text-align: center;
-        }
+    .hamburgerContainer {
+        display: none;
     }
 
     @media only screen and (max-width: 768px) {
-        padding: 0.5rem;
 
-        ul {
-            gap: 1rem;
+            .menu-container {
+                display: none;
+            }
+            
+            /* Reveal menu on hamburger click */
+            &:has(.hamburgerCheckbox:checked) .menu-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: var(--big-gap);
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 4;
+                background-color: var(--blue-light);
+
+                .headerMenuLink {
+                     font-size: 34px;
+                }
+            }
+            
+            .headerMenuItem.visibleForMobileOnly {
+                display: block;
+            }
+    
+            .hamburgerContainer {
+                --hamburgerWidth: 50px;
+                --hamburgerHeight: 25px;
+                --hamburgerLineColor: white;
+                --hamburgerTransition: var(--transition);
+                display: block;
+                z-index: 4;
+                
+                .hamburgerIcon {
+                    height: var(--hamburgerHeight);
+                    width: var(--hamburgerWidth);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+        
+                    .hamburgerLine {
+                        background: var(--hamburgerLineColor);
+                        display: block;
+                        height: 2px;
+                        width: var(--hamburgerWidth);
+                        transition: var(--hamburgerTransition);
+                    }
+                }
+                .hamburgerCheckbox {
+                    display: none;
+                    &:checked ~ #headerMenu {
+                        max-height: none;
+                        height: 90vh;
+                        position: absolute;
+                        top: 10vh;
+                        left: 0;
+                        width: 100vw;
+                        display: flex;
+                        justify-content: center;
+                        background-image: linear-gradient(white,#ffffff);
+                    }
+                    &:checked ~ .hamburgerIcon .hamburgerLine {
+                        &.two {
+                            background: transparent;
+                        }
+                        &.one {
+                            transform: translateY(calc(var(--hamburgerHeight) / 2 - 2px)) rotate(45deg);
+                        }
+                        &.three {
+                            transform: translateY(calc(var(--hamburgerHeight) / 2 * (-1))) rotate(-45deg);
+                        }
+                    }
+                }
+            }
         }
-    }
-
-    @media only screen and (max-width: 480px) {
-        padding: 0.5rem;
-    }
 }
+    
+body:has(.hamburgerCheckbox:checked) {
+    overflow: hidden;
+}
+
+

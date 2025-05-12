@@ -1,11 +1,12 @@
-import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from "../images/logo.png";
 
 function Header() {
+
   const location = useLocation();
-  const navigate = useNavigate();
   const isHome = location.pathname === '/';
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLogoClick = (e) => {
     if (isHome) {
@@ -21,38 +22,56 @@ function Header() {
     }
   };
 
+  function closeMobileMenuOnLinkClick() {
+    const checkbox = document.querySelector(".hamburgerCheckbox");
+    if (checkbox.checked) 
+        checkbox.checked = false;
+}
 
   return (
     <header className="header">
+
       <Link onClick={handleLogoClick} to="/" className="logo-link">
         <img src={logo} alt="logo" className="logo-image" />
       </Link>
-      <nav className="nav" role="navigation">
-        <ul>
-          <li>
-            <Link to="/services" >
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact">
-              Contact
-            </Link>
-          </li>
-          <li>
-            <button className="button">
-              <Link to="/reserve" onClick={handleReserveButtonClick}>
+
+        <nav className="menu-container" role="navigation">
+
+            <div className='menu-item'>
+                <Link className="menu-link" to="/services" onClick={closeMobileMenuOnLinkClick}>
+                Services
+                </Link>
+            </div>
+
+            <div className='menu-item'>
+                <Link className="menu-link"  to="/about" onClick={closeMobileMenuOnLinkClick}>
+                About
+                </Link>
+            </div>
+
+            <div className='menu-item'>
+                <Link className="menu-link"  to="/contact" onClick={closeMobileMenuOnLinkClick}>
+                Contact
+                </Link>
+            </div>
+
+            <button className="button" onClick={(e) => { handleReserveButtonClick(e); setIsMobileMenuOpen(false); }}>
+                <Link to="/reserve" onClick={closeMobileMenuOnLinkClick}>
                 Reserve
-              </Link>
+                </Link>
             </button>
-          </li>
-        </ul>
-      </nav>
+
+        </nav>
+
+        <div className="hamburgerContainer">
+            <input type="checkbox" className="hamburgerCheckbox" id="hamburgerCheckbox" />
+            <label className="hamburgerIcon" htmlFor="hamburgerCheckbox">
+                <span className="hamburgerLine one"></span>
+                <span className="hamburgerLine two"></span>
+                <span className="hamburgerLine three"></span>
+            </label>
+        </div>
+
     </header>
   );
 }
