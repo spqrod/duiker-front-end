@@ -23,17 +23,22 @@ function Home() {
     <main className="home">
 
         <section className="hero" >
+
             <div id='hero-section-target-for-scroll'></div>
+
             <div className='contentContainer'>
                 <div className="textContainer">
-                    <p>
+                    <p className='text-for-desktop'>
                         At Duiker Travels, our vision is to be the leading provider of seamless travel experiences.
                     </p>
-                    <p>
+                    <p className='text-for-desktop'>
                         Ensuring that every journey is not only safe and comfortable but also enriching. We are committed to offering unparalleled access to the beauty, culture, and diverse landscapes of Zambia. 
                     </p>
-                    <p>
+                    <p className='text-for-desktop'>
                         Our goal is to inspire travelers to explore the heart of Zambia with confidence, knowing that they are supported by reliable services and expert guidance every step of the way. We strive to make each trip memorable, fostering a deep connection with Zambia’s rich heritage while promoting sustainable tourism and customer satisfaction.
+                    </p>
+                    <p className='text-for-mobile'>
+                        At Duiker Travel, our goal is to inspire travelers to explore the heart of Zambia with confidence, knowing that they are supported by reliable services and expert guidance every step of the way. We strive to make each trip memorable, fostering a deep connection with Zambia’s rich heritage while promoting sustainable tourism and customer satisfaction.
                     </p>
                     <h3>
                         Trusted. Professional. Experienced.
