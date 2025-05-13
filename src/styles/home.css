@@ -92,13 +92,20 @@
         --photo-width: 80px; 
         height: 300px;
 
-        .dashed-line {
-            position: absolute;
-            top: 0;
-            left: calc(var(--side-padding-for-sections) * (-1));
-            height: 100%;
-            width: 100vw;
+        .svg-container {
+            .dashed-line {
+                position: absolute;
+                top: 0;
+                left: calc(var(--side-padding-for-sections) * (-1));
+                height: 100%;
+                width: 100vw;
+
+                &.mobile {
+                    display: none;
+                }
+            }
         }
+
 
       .item-container {
         position: relative;
@@ -107,12 +114,12 @@
         align-items: center;
         padding: var(--big-gap);
 
-        background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-        backdrop-filter: blur(5px); /* Slight blur effect for glass-like appearance */
+        background: rgba(255, 255, 255, 0.1); 
+        backdrop-filter: blur(5px); 
         border-radius: var(--border-radius);
         height: fit-content;
-        max-width: 250px; /* Adjust width as needed */
-        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3); /* Inset shadow for recessed effect */
+        max-width: 250px; 
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3); 
 
         p {
           color: white;
@@ -159,6 +166,80 @@
         
       }
     }
+
+    @media only screen and (max-width: 768px) {
+
+        .content-container {
+
+            flex-direction: column;
+            justify-content: space-between;
+            height: auto;
+            gap: calc(var(--big-gap) * 3);
+
+            .svg-container {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+            
+                .dashed-line {
+
+                    &.desktop {
+                        display: none;
+                    }
+
+                    &.mobile {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+    
+          .item-container {
+    
+            
+            &.victoria-falls {
+                top: 0;
+                align-self: start;
+                
+                .item-image {
+                    right: calc(var(--photo-width) * 3 / 4 * (-1));
+                }
+            }
+            
+            &.south-luangwa {
+                top: auto;
+                right: auto;
+                align-self: end;
+                .item-image {
+                    left: calc(var(--photo-width) / 2 * (-1));
+                }
+            }
+            
+            &.low-zambezi {
+                top: auto;
+                align-self: start;
+                .item-image {
+                    top: calc(var(--photo-width) / 2);
+                }
+            }
+            
+            &.kafue {
+                align-self: end;
+                top: auto;
+                .item-image {
+                    top: calc(var(--photo-width) / 2 * (-1));
+                    left: calc(var(--photo-width) * 3 / 4 * (-1));
+                }
+            }
+            
+          }
+        }
+
+    }
+
   }
 
   .our-services {
@@ -211,7 +292,6 @@
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto;
 
-
             gap: var(--big-gap);
             background-color: white;
             border-radius: var(--border-radius);
@@ -229,7 +309,6 @@
                     width: auto;
                 }
             }
-            
 
             .text-container {
                 grid-column: 2 / 3;
@@ -255,6 +334,38 @@
             }
         }
     }
+
+    @media only screen and (max-width: 768px) {
+
+        .content-container {
+
+            .item-container {
+
+                display: flex;
+                flex-direction: column;
+                
+                .image-container {
+
+                    max-width: 100%;
+                    width: 100%;
+                    
+                    .image {
+
+                        width: 100%;
+                    }
+                }
+
+                .text-container {
+                    padding: var(--big-gap);
+                }
+                
+                .button {
+                    margin-bottom: var(--big-gap);
+                    align-self: center;
+                }
+            }
+        }
+    }
   }
 
   .reviews {
@@ -262,7 +373,6 @@
     position: relative;
     z-index: 0;
     
-
     .coffee-bean-container {
         position: absolute;
         z-index: 1;
@@ -333,6 +443,14 @@
             
         }
     }
+
+    @media only screen and (max-width: 768px) {
+    
+        .content-container {
+            flex-wrap: wrap;
+        }
+    }
+
   }
 
   .advantages {
