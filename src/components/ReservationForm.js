@@ -203,12 +203,12 @@ function ReservationForm() {
             <div className="form-row special-requests">
 
                 <div className="label-and-line-container">
+                    <h3>Special Requests</h3>
                     <div className="line"></div>
                     <div className="circle"></div>
                 </div>
 
                 <div className="label-and-input-container">
-                    <label>Special Requests:</label>
                     <textarea 
                         placeholder="Special Requests"
                         name="specialRequests"

@@ -2,13 +2,14 @@
 
 
     .our-services {
+
         background-color: var(--yellow);
         position: relative;
         z-index: 0;
         
 
         .coffee-bean-container {
-            z-index: 1;
+            z-index: 0;
             position: absolute;
 
             svg {
@@ -92,12 +93,49 @@
                 }
             }
         }
+
+
+    @media only screen and (max-width: 768px) {
+
+        .content-container {
+
+            .item-container {
+
+                display: flex;
+                flex-direction: column;
+                
+                .image-container {
+
+                    max-width: 100%;
+                    width: 100%;
+                    
+                    .image {
+
+                        width: 100%;
+                    }
+                }
+
+                .text-container {
+                    padding: var(--big-gap);
+                }
+                
+                .button {
+                    margin-bottom: var(--big-gap);
+                    align-self: center;
+                }
+            }
+        }
+    }
+
+
     }
 
     .reservation {
         background-color: var(--yellow);
 
         h2 {
+            position: relative;
+            z-index: 3;
             color: var(--blue-dark);
         }
     }

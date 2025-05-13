@@ -6,7 +6,6 @@ import {ReactComponent as InstagramIcon } from "../images/instagram.svg";
 import {ReactComponent as FacebookIcon } from "../images/facebook.svg";
 import {ReactComponent as WhatsappIcon } from "../images/whatsapp.svg";
 
-
 function Footer() {
 
     const year = new Date().getFullYear();

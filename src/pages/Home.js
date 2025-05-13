@@ -61,10 +61,7 @@ function Home() {
 
             <div className="content-container">
 
-
-                
                 <div className="svg-container">
-                    
                     <svg className='dashed-line desktop' width="1512" height="263" viewBox="0 0 1512 263" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 33.3322C77.5385 24.1865 253.362 15.3734 336.349 53.2864C440.083 100.678 559.534 310.197 826.728 250.334C1093.92 190.471 1251.09 -46.4846 1512 10.8837" stroke="white" stroke-width="2.72425" stroke-dasharray="3.63 3.63"/>
                     </svg>

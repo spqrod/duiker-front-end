@@ -8,7 +8,7 @@
     z-index: 2;
     
     .form-container {
-        width: 850px;
+        width: 768px;
         background-color: var(--blue-dark);
         padding: var(--big-gap);
         border-radius: var(--border-radius);
@@ -18,7 +18,6 @@
     }
   
     .form-row {
-        /* animation: fadeIn 1s ease-out; */
 
         input, select, textarea {
             padding: var(--medium-gap);
@@ -34,10 +33,6 @@
         input::placeholder, textarea::placeholder {
             color: white;
             opacity: 0.7;
-        }
-
-        @media (max-width: 768px) {
-            grid-template-columns: 1fr;
         }
 
         .label-and-line-container {
@@ -110,15 +105,19 @@
         display: flex;
         justify-content: end;
     }
+
+    @media only screen and (max-width: 768px) {
+            
+        .form-container {
+            width: 100%;
+
+            .personal-details {
+
+                .inputs-container {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
 }
 
-/* @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-} */
