@@ -2,36 +2,41 @@ import React from 'react';
 import '../styles/reservation-form.css';
 import {useState} from "react";
 
+
+
 function ReservationForm() {
 
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        phone: '',
-        payment: '',
-        serviceType: '',
-        pickUpDate: '',
-        pickUpTime: '',
-        pickUpLocation: '',
-        dropOffLocation: '',
-        specialRequests: '',
-      });
+    // const [formData, setFormData] = useState({
+    //     name: '',
+    //     email: '',
+    //     phone: '',
+    //     payment: '',
+    //     serviceType: '',
+    //     pickUpDate: '',
+    //     pickUpTime: '',
+    //     pickUpLocation: '',
+    //     dropOffLocation: '',
+    //     specialRequests: '',
+    //   });
     
-      const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-      };
+    //   const handleInputChange = (e) => {
+        // const { name, value } = e.target;
+        // setFormData((prev) => ({ ...prev, [name]: value }));
+    //   };
     
-      const isPersonalDetailsFilled = formData.fullName && formData.email && formData.phone;
-      const isPaymentMethodFilled = formData.payment;
-      const isServiceTypeFilled = formData.serviceType;
-      const isPickUpDetailsFilled = formData.pickUpDate && formData.pickUpTime;
-      const isLocationsFilled = formData.pickUpLocation && formData.dropOffLocation;
+    //   const isPersonalDetailsFilled = formData.fullName && formData.email && formData.phone;
+    //   const isPaymentMethodFilled = formData.payment;
+    //   const isServiceTypeFilled = formData.serviceType;
+    //   const isPickUpDetailsFilled = formData.pickUpDate && formData.pickUpTime;
+    //   const isLocationsFilled = formData.pickUpLocation && formData.dropOffLocation;
+
+
+    
 
   return (
     <div className="reservation-form">
 
-        <div className="form-container">
+        <form className="form-container" >
 
             <div className="form-row personal-details">
                 <div className="label-and-line-container">
@@ -45,9 +50,10 @@ function ReservationForm() {
                     <div className="input-container">
                         <input 
                             type="text" 
-                            name="fullName"
-                            value={formData.fullName}
-                            onChange={handleInputChange}
+                            name="name"
+                            id='name'
+                            // value={formData.name}
+                            // onChange={handleInputChange}
                             placeholder="Full Name" 
                             required
                         />
@@ -56,8 +62,9 @@ function ReservationForm() {
                         <input 
                             type="email" 
                             name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
+                            id='email'
+                            // value={formData.email}
+                            // onChange={handleInputChange}
                             placeholder="Email Address" 
                             required
                         />
@@ -67,8 +74,9 @@ function ReservationForm() {
                         <input 
                             type="tel" 
                             name="phone"
-                            value={formData.phone}
-                            onChange={handleInputChange}
+                            id='phone'
+                            // value={formData.phone}
+                            // onChange={handleInputChange}
                             placeholder="Phone Number" 
                             required
                         />
@@ -89,8 +97,8 @@ function ReservationForm() {
                                 type="radio" 
                                 name="payment" 
                                 value="debit" 
-                                checked={formData.payment === 'debit'}
-                                onChange={handleInputChange}
+                                // checked={formData.payment === 'debit'}
+                                // onChange={handleInputChange}
                             />
                             Debit Card
                         </label>
@@ -99,8 +107,8 @@ function ReservationForm() {
                                 type="radio" 
                                 name="payment" 
                                 value="credit"  
-                                checked={formData.payment === 'credit'}
-                                onChange={handleInputChange}
+                                // checked={formData.payment === 'credit'}
+                                // onChange={handleInputChange}
                             />
                             Credit Card
                         </label>
@@ -109,8 +117,8 @@ function ReservationForm() {
                                 type="radio" 
                                 name="payment" 
                                 value="transfer" 
-                                checked={formData.payment === 'transfer'}
-                                onChange={handleInputChange}
+                                // checked={formData.payment === 'transfer'}
+                                // onChange={handleInputChange}
                             />
                             Bank Transfer
                         </label>
@@ -119,14 +127,13 @@ function ReservationForm() {
                                 type="radio" 
                                 name="payment" 
                                 value="cash"  
-                                checked={formData.payment === 'cash'}
-                                onChange={handleInputChange}
+                                // checked={formData.payment === 'cash'}
+                                // onChange={handleInputChange}
                             />
                             Cash on Arrival
                         </label>
                 </div>
             </div>
-            {/* )} */}
 
             {/* {isPaymentMethodFilled && ( */}
             <div className="form-row service-type">
@@ -137,14 +144,13 @@ function ReservationForm() {
                 </div>
                 <select
                     name="serviceType"
-                    value={formData.serviceType}
-                    onChange={handleInputChange}
+                    // value={formData.serviceType}
+                    // onChange={handleInputChange}
                 >
                 <option value="airport">Airport and Hotel Transfer</option>
                 <option value="sightseeing">Intra-city sightseeing/guided tours</option>
                 </select>
             </div>
-            {/* )} */}
 
             {/* {isServiceTypeFilled && ( */}
             <div className="form-row pick-up">
@@ -162,8 +168,8 @@ function ReservationForm() {
                         <input 
                             type="date" 
                             name="pickUpDate"
-                            value={formData.pickUpDate}
-                            onChange={handleInputChange}
+                            // value={formData.pickUpDate}
+                            // onChange={handleInputChange}
                         />
                     </div>
                     <div className="label-and-input-container">
@@ -171,8 +177,8 @@ function ReservationForm() {
                         <input 
                             type="time" 
                             name="pickUpTime"
-                            value={formData.pickUpTime}
-                            onChange={handleInputChange}
+                            // value={formData.pickUpTime}
+                            // onChange={handleInputChange}
                         />
                     </div>
                     <div className="label-and-input-container">
@@ -180,8 +186,8 @@ function ReservationForm() {
                         <input 
                             type="text" 
                             name="pickUpLocation"
-                            value={formData.pickUpLocation}
-                            onChange={handleInputChange}
+                            // value={formData.pickUpLocation}
+                            // onChange={handleInputChange}
                             placeholder="Pick-up Location" 
                         />
                     </div>
@@ -190,14 +196,13 @@ function ReservationForm() {
                         <input 
                             type="text" 
                             name="dropOffLocation"
-                            value={formData.dropOffLocation}
-                            onChange={handleInputChange}
+                            // value={formData.dropOffLocation}
+                            // onChange={handleInputChange}
                             placeholder="Pick-up Location" 
                         />
                     </div>
                 </div>
             </div>
-            {/* )} */}
 
             {/* {isPickUpDetailsFilled && ( */}
             <div className="form-row special-requests">
@@ -212,23 +217,22 @@ function ReservationForm() {
                     <textarea 
                         placeholder="Special Requests"
                         name="specialRequests"
-                        value={formData.specialRequests}
-                        onChange={handleInputChange}
+                        // value={formData.specialRequests}
+                        // onChange={handleInputChange}
                     >
                     </textarea>
                 </div>
             </div>
-            {/* )} */}
 
             {/* {isPickUpDetailsFilled && ( */}
             <div className="button-container">
-                <button type="button" className="button">Reserve</button>
+                <button type="submit" className="button">Reserve</button>
             </div>        
-            {/* )} */}
 
-        </div>
+        </form>
 
     </div>
+
   );
 }
 

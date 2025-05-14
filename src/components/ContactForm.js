@@ -19,7 +19,7 @@ function ContactForm() {
   return (
     <div className="contact-form">
 
-        <div className="form-container">
+        <form className="form-container">
 
             <div className="form-row personal-details">
                 <div className="label-and-line-container">
@@ -78,10 +78,10 @@ function ContactForm() {
             </div>
 
             <div className="button-container">
-                <button type="button" className="submit-button">Send Message</button>
+                <button type="submit" className="submit-button">Send Message</button>
             </div>        
 
-        </div>
+        </form>
 
     </div>
   );

@@ -37,6 +37,12 @@ function Header() {
 
         <nav className="menu-container" role="navigation">
 
+            <div className='menu-item mobile-only'>
+                <Link className="menu-link"  to="/" onClick={closeMobileMenuOnLinkClick}>
+                Home
+                </Link>
+            </div>
+
             <div className='menu-item'>
                 <Link className="menu-link" to="/services" onClick={closeMobileMenuOnLinkClick}>
                 Services

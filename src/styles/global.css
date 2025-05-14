@@ -5,8 +5,6 @@
     margin: 0;
     padding: 0;
 
-
-  
     section {
       overflow-x: clip;
     }
@@ -26,7 +24,8 @@
         box-shadow: none;
 
         width: 200px;
-        padding: var(--medium-gap);
+        /* padding: var(--medium-gap); */
+        min-height: 48px;
         background-color: var(--yellow);
         border-radius: var(--border-radius);
         color: black;
@@ -137,6 +136,7 @@
         --medium-gap: 12px;
         --small-gap: 6px;
         --side-padding-for-sections: 2vw;
+        --header-height: 8vh;
     }
 
     @media only screen and (max-width: 480px) {

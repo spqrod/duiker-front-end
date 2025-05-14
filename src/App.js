@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import Transition from './components/Transition';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -12,6 +11,7 @@ import Reserve from './pages/Reserve';
 import Events from './pages/Events';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+// import Test from './pages/Test';
 import WhatsAppButton from './components/WhatsAppButton';
 import './styles/global.css';
 import './styles/header.css';
@@ -39,6 +39,7 @@ function AppContent() {
         <Route path="/events" element={<Events />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
+        {/* <Route path="/test" element={<Test />} /> */}
       </Routes>
     </AnimatePresence>
   );
