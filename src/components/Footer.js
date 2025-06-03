@@ -32,15 +32,13 @@ function Footer() {
             </div>
 
         <div className="social-media-container">
-            {/* TO ADD */}
-            <a className='link' href="https://wa.me/+260771708041" target="_blank" rel="noopener noreferrer">
+            <a className='link' href="https://www.facebook.com/share/18qVibysvh/" target="_blank" rel="noopener noreferrer">
                 <FacebookIcon />
             </a>
             <a className='link' href="https://wa.me/+260771708041" target="_blank" rel="noopener noreferrer">
                 <WhatsappIcon />
             </a>
-            {/* TO ADD */}
-            <a className='link' href="https://wa.me/+260771708041" target="_blank" rel="noopener noreferrer">
+            <a className='link' href="https://www.instagram.com/duikertravels?igsh=MWJtdWRndGl0ZXY2MQ==">
                 <InstagramIcon />
             </a>
         </div>

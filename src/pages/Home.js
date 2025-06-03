@@ -6,8 +6,9 @@ import topRatedDestinationsKafue from "../images/top-rated-destinations-kafue.pn
 import services1 from "../images/services-1.jpg";
 import services2 from "../images/services-2.jpg";
 import services3 from "../images/services-3.jpg";
-import services4 from "../images/services-4.jpg";
+import services4 from "../images/services-5.jpg";
 import reviewer1 from "../images/reviewer-1.png";
+import reviewerIcon from "../images/reviewer-icon.png";
 import { ReactComponent as AdvantageIcon1 } from "../images/advantage-icon-1.svg"; 
 import { ReactComponent as AdvantageIcon2 } from "../images/advantage-icon-2.svg"; 
 import { ReactComponent as AdvantageIcon3 } from "../images/advantage-icon-3.svg"; 
@@ -271,7 +272,7 @@ function Home() {
 
                     </div>
                     <p>
-                        This trip was one of the best in our lives, and the fact that we lived in this luxurious villa made it simply unforgettable! Thank you for giving us such a wonderful holiday, we will definitely come back to you again!
+                        Hi, Mark here. We had a good trip down with Robin. He drove really well, and safely. It was good to note that when overtaking, he always erred on the side of caution. We felt really comfortable. He's also great to talk to, without being intrusive. Overall, a good experience.
                     </p>
 
                     <div className='quote-icon'>
@@ -282,10 +283,10 @@ function Home() {
 
                     <div className="reviewer-container">
                         <div className="image-container">
-                            <img className='reviewer-image' src={reviewer1} alt="" />
+                            <img className='reviewer-image' src={reviewerIcon} alt="" />
                         </div>
                         <p>
-                            Anthony Bruff
+                            Mark
                         </p>
                     </div>
                 </div>

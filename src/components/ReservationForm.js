@@ -96,22 +96,13 @@ function ReservationForm() {
                             <input 
                                 type="radio" 
                                 name="payment" 
-                                value="debit" 
+                                value="card" 
                                 // checked={formData.payment === 'debit'}
                                 // onChange={handleInputChange}
                             />
-                            Debit Card
+                            Banking Card
                         </label>
-                        <label>
-                            <input 
-                                type="radio" 
-                                name="payment" 
-                                value="credit"  
-                                // checked={formData.payment === 'credit'}
-                                // onChange={handleInputChange}
-                            />
-                            Credit Card
-                        </label>
+                       
                         <label>
                             <input 
                                 type="radio" 
@@ -131,6 +122,16 @@ function ReservationForm() {
                                 // onChange={handleInputChange}
                             />
                             Cash on Arrival
+                        </label>
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="payment" 
+                                value="other"  
+                                // checked={formData.payment === 'credit'}
+                                // onChange={handleInputChange}
+                            />
+                            Other
                         </label>
                 </div>
             </div>

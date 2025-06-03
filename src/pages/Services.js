@@ -2,7 +2,7 @@ import React from 'react';
 import services1 from "../images/services-1.jpg";
 import services2 from "../images/services-2.jpg";
 import services3 from "../images/services-3.jpg";
-import services4 from "../images/services-4.jpg";
+import services4 from "../images/services-5.jpg";
 import ReservationForm from "../components/ReservationForm.js"; 
 import '../styles/services.css';
 import Transition from '../components/Transition.js';

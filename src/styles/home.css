@@ -306,7 +306,6 @@
                 .image {
                     border-radius: var(--border-radius);
                     height: 100%;
-                    width: auto;
                 }
             }
 
@@ -399,8 +398,9 @@
         position: relative;
         z-index: 3;
         display: flex;
+        flex-wrap: wrap;
         gap: var(--big-gap);
-        justify-content: center;
+        justify-content: space-between;
         
         .review-card {
             display: flex;
@@ -450,6 +450,17 @@
             flex-wrap: wrap;
         }
     }
+
+    @media (min-width: 768px) {
+
+        .review-card {
+            flex: 1 1 calc(33.33% - var(--big-gap)); 
+            max-width: calc(33.33% - var(--big-gap));
+        }
+
+      }
+      
+
 
   }
 
