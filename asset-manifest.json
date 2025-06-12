@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/duiker-front-end/static/css/main.87105c3c.css",
-    "main.js": "/duiker-front-end/static/js/main.30a376ba.js",
+    "main.js": "/duiker-front-end/static/js/main.8375f059.js",
     "static/media/reservation-background.jpg": "/duiker-front-end/static/media/reservation-background.f0e977b3f070f9433e10.jpg",
     "static/media/hero-section-background-image.jpg": "/duiker-front-end/static/media/hero-section-background-image.847237bec72afc5d1396.jpg",
     "static/media/reviewer-1.png": "/duiker-front-end/static/media/reviewer-1.fa31931dd68eba027c1e.png",
@@ -23,10 +23,10 @@
     "index.html": "/duiker-front-end/index.html",
     "static/media/advantage-icon-2.svg": "/duiker-front-end/static/media/advantage-icon-2.e92a6eb638c660110586b5e95ccd2aca.svg",
     "main.87105c3c.css.map": "/duiker-front-end/static/css/main.87105c3c.css.map",
-    "main.30a376ba.js.map": "/duiker-front-end/static/js/main.30a376ba.js.map"
+    "main.8375f059.js.map": "/duiker-front-end/static/js/main.8375f059.js.map"
   },
   "entrypoints": [
     "static/css/main.87105c3c.css",
-    "static/js/main.30a376ba.js"
+    "static/js/main.8375f059.js"
   ]
 }
