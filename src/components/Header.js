@@ -49,11 +49,11 @@ function Header() {
                 </Link>
             </div>
 
-            <div className='menu-item'>
+            {/* <div className='menu-item'>
                 <Link className="menu-link"  to="/about" onClick={closeMobileMenuOnLinkClick}>
                 About
                 </Link>
-            </div>
+            </div> */}
 
             <div className='menu-item'>
                 <Link className="menu-link"  to="/contact" onClick={closeMobileMenuOnLinkClick}>

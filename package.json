@@ -2,12 +2,13 @@
   "name": "duiker-front-end",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://spqrod.github.io/duiker-front-end/",
+  "homepage": ".",
   "dependencies": {
     "cra-template": "1.2.0",
     "framer-motion": "^12.10.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-google-recaptcha": "^3.1.0",
     "react-router-dom": "^7.1.5",
     "react-scripts": "^5.0.1"
   },
@@ -17,7 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "build-for-server": "BUILD_PATH='../server/build' react-scripts build"
   },
   "eslintConfig": {
     "extends": [

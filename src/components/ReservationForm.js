@@ -1,42 +1,112 @@
 import React from 'react';
 import '../styles/reservation-form.css';
-import {useState} from "react";
-
-
+import {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 
 function ReservationForm() {
 
-    // const [formData, setFormData] = useState({
-    //     name: '',
-    //     email: '',
-    //     phone: '',
-    //     payment: '',
-    //     serviceType: '',
-    //     pickUpDate: '',
-    //     pickUpTime: '',
-    //     pickUpLocation: '',
-    //     dropOffLocation: '',
-    //     specialRequests: '',
-    //   });
-    
-    //   const handleInputChange = (e) => {
-        // const { name, value } = e.target;
-        // setFormData((prev) => ({ ...prev, [name]: value }));
-    //   };
-    
-    //   const isPersonalDetailsFilled = formData.fullName && formData.email && formData.phone;
-    //   const isPaymentMethodFilled = formData.payment;
-    //   const isServiceTypeFilled = formData.serviceType;
-    //   const isPickUpDetailsFilled = formData.pickUpDate && formData.pickUpTime;
-    //   const isLocationsFilled = formData.pickUpLocation && formData.dropOffLocation;
+    const [dialogTextForMessageResult, setDialogTextForMessageResult] = useState("");
 
-
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.REACT_APP_GOOGLE_CAPTCHA_SITE_KEY}`;
+        script.async = true;
+        document.body.appendChild(script);
     
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
+
+    const api = {
+        sendEmail: function(data) {
+            const fetchURL = "/api/reservation";
+            const fetchOptions = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            };
+            return fetch(fetchURL, fetchOptions)
+                .then(response => response.json())
+        }
+    };
+
+    const controller = {
+
+        handleSubmit: async function(e) {
+            e.preventDefault();
+
+            const token = await controller.executeRecaptcha();
+            
+            const { name, email, phone, specialRequests, payment, serviceType, pickUpDate, pickUpTime, pickUpLocation, dropOffLocation } = e.target.elements;
+
+            const formData = {
+                name: name.value,
+                email: email.value,
+                phone: phone.value,
+                payment: payment.value,
+                serviceType: serviceType.value,
+                pickUpDate: pickUpDate.value,
+                pickUpTime: pickUpTime.value,
+                pickUpLocation: pickUpLocation.value,
+                dropOffLocation: dropOffLocation.value,
+                specialRequests: specialRequests.value,
+            }
+            
+            controller.sendEmail({ token, ...formData });
+        },
+
+        updateDialogTextWithMessageResult: function(success) {
+            const successMessage = "Thank you for your reservation request! We will get in touch shortly.";
+            const failureMessage = "Something went wrong. Please get in touch with us in a different way.";
+            if (success) 
+                setDialogTextForMessageResult(successMessage);
+            else 
+                setDialogTextForMessageResult(failureMessage);
+        },
+
+        sendEmail: function(data) {
+            setDialogTextForMessageResult("Sending reservation request...");
+            display.showDialog();
+            api.sendEmail(data)
+                .then((response) => {
+                    display.resetFormAfterSubmit();
+                    controller.updateDialogTextWithMessageResult(response.success);
+                });
+        },
+
+        executeRecaptcha: function() {
+            return new Promise((resolve) => {
+                window.grecaptcha.ready(() => {
+                window.grecaptcha
+                    .execute(process.env.REACT_APP_GOOGLE_CAPTCHA_SITE_KEY, { action: 'submit' })
+                    .then((token) => {
+                    resolve(token);
+                    });
+                });
+            });
+        }
+    }
+
+    const display = {
+        
+        showDialog: function() {
+            const dialog = document.querySelector(".dialog");
+            dialog.showModal();
+        },
+
+        resetFormAfterSubmit() {
+            const form = document.querySelector(".form-container");
+            form.reset();
+        }
+    }
 
   return (
     <div className="reservation-form">
 
-        <form className="form-container" >
+        <form className="form-container" onSubmit={controller.handleSubmit}>
 
             <div className="form-row personal-details">
                 <div className="label-and-line-container">
@@ -52,8 +122,6 @@ function ReservationForm() {
                             type="text" 
                             name="name"
                             id='name'
-                            // value={formData.name}
-                            // onChange={handleInputChange}
                             placeholder="Full Name" 
                             required
                         />
@@ -63,8 +131,6 @@ function ReservationForm() {
                             type="email" 
                             name="email"
                             id='email'
-                            // value={formData.email}
-                            // onChange={handleInputChange}
                             placeholder="Email Address" 
                             required
                         />
@@ -75,8 +141,6 @@ function ReservationForm() {
                             type="tel" 
                             name="phone"
                             id='phone'
-                            // value={formData.phone}
-                            // onChange={handleInputChange}
                             placeholder="Phone Number" 
                             required
                         />
@@ -84,7 +148,6 @@ function ReservationForm() {
                 </div>
             </div>
 
-            {/* {isPersonalDetailsFilled && ( */}
             <div className="form-row payment-method">
                 <div className="label-and-line-container">
                     <h3>Payment Method:</h3>
@@ -96,9 +159,7 @@ function ReservationForm() {
                             <input 
                                 type="radio" 
                                 name="payment" 
-                                value="card" 
-                                // checked={formData.payment === 'debit'}
-                                // onChange={handleInputChange}
+                                value="Banking Card" 
                             />
                             Banking Card
                         </label>
@@ -107,9 +168,7 @@ function ReservationForm() {
                             <input 
                                 type="radio" 
                                 name="payment" 
-                                value="transfer" 
-                                // checked={formData.payment === 'transfer'}
-                                // onChange={handleInputChange}
+                                value="Bank Transfer" 
                             />
                             Bank Transfer
                         </label>
@@ -117,9 +176,7 @@ function ReservationForm() {
                             <input 
                                 type="radio" 
                                 name="payment" 
-                                value="cash"  
-                                // checked={formData.payment === 'cash'}
-                                // onChange={handleInputChange}
+                                value="Cash"  
                             />
                             Cash on Arrival
                         </label>
@@ -127,16 +184,13 @@ function ReservationForm() {
                             <input 
                                 type="radio" 
                                 name="payment" 
-                                value="other"  
-                                // checked={formData.payment === 'credit'}
-                                // onChange={handleInputChange}
+                                value="Other"  
                             />
                             Other
                         </label>
                 </div>
             </div>
 
-            {/* {isPaymentMethodFilled && ( */}
             <div className="form-row service-type">
                 <div className="label-and-line-container">
                     <h3>Service Type:</h3>
@@ -145,15 +199,12 @@ function ReservationForm() {
                 </div>
                 <select
                     name="serviceType"
-                    // value={formData.serviceType}
-                    // onChange={handleInputChange}
                 >
-                <option value="airport">Airport and Hotel Transfer</option>
-                <option value="sightseeing">Intra-city sightseeing/guided tours</option>
+                    <option value="Airport and Hotel Transfer">Airport and Hotel Transfer</option>
+                    <option value="Intra-city sightseeing/guided tours">Intra-city sightseeing/guided tours</option>
                 </select>
             </div>
 
-            {/* {isServiceTypeFilled && ( */}
             <div className="form-row pick-up">
 
                 <div className="label-and-line-container">
@@ -169,8 +220,6 @@ function ReservationForm() {
                         <input 
                             type="date" 
                             name="pickUpDate"
-                            // value={formData.pickUpDate}
-                            // onChange={handleInputChange}
                         />
                     </div>
                     <div className="label-and-input-container">
@@ -178,8 +227,6 @@ function ReservationForm() {
                         <input 
                             type="time" 
                             name="pickUpTime"
-                            // value={formData.pickUpTime}
-                            // onChange={handleInputChange}
                         />
                     </div>
                     <div className="label-and-input-container">
@@ -187,8 +234,6 @@ function ReservationForm() {
                         <input 
                             type="text" 
                             name="pickUpLocation"
-                            // value={formData.pickUpLocation}
-                            // onChange={handleInputChange}
                             placeholder="Pick-up Location" 
                         />
                     </div>
@@ -197,15 +242,12 @@ function ReservationForm() {
                         <input 
                             type="text" 
                             name="dropOffLocation"
-                            // value={formData.dropOffLocation}
-                            // onChange={handleInputChange}
-                            placeholder="Pick-up Location" 
+                            placeholder="Drop-off Location" 
                         />
                     </div>
                 </div>
             </div>
 
-            {/* {isPickUpDetailsFilled && ( */}
             <div className="form-row special-requests">
 
                 <div className="label-and-line-container">
@@ -218,19 +260,36 @@ function ReservationForm() {
                     <textarea 
                         placeholder="Special Requests"
                         name="specialRequests"
-                        // value={formData.specialRequests}
-                        // onChange={handleInputChange}
                     >
                     </textarea>
                 </div>
             </div>
 
-            {/* {isPickUpDetailsFilled && ( */}
+            <div className="legalConsentCheckboxContainer">
+                <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox" required/>
+                <label htmlFor="legalConsentCheckbox" className="legalConsentLabel">
+                    I accept <Link to="/terms">Terms of Service</Link> and <Link to="/privacy">Privacy Policy</Link>
+                </label>
+            </div>
+
             <div className="button-container">
                 <button type="submit" className="button">Reserve</button>
             </div>        
 
         </form>
+
+        <dialog className="dialog">
+            <p className="dialogText">{dialogTextForMessageResult}</p>
+            <form method="dialog">
+                <button className="button">
+                    Close
+                    <div className="buttonBorder"></div>
+                    <div className="buttonBorder"></div>
+                    <div className="buttonBorder"></div>
+                    <div className="buttonBorder"></div>
+                </button>
+            </form>
+        </dialog>
 
     </div>
 

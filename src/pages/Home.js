@@ -88,7 +88,7 @@ function Home() {
                     <p>
                         Victoria falls - in the local tongue “the smoke that thunders”
                     </p>
-                    <img className='item-image' src={topRatedDestinationsVictoriaFalls} alt="" />
+                    <img className='item-image' src={topRatedDestinationsVictoriaFalls} alt="victoria falls" />
                 </div>
 
                 <div className="item-container south-luangwa">
@@ -157,7 +157,7 @@ function Home() {
 
                 <div className="item-container">
                     <div className="image-container">
-                        <img className="image" src={services1} alt="" />
+                        <img className="image" src={services1} alt="airport transfer" />
                     </div>
                     <div className="text-container">
                         <h3>Airport and Hotel Transfers</h3>
@@ -176,7 +176,7 @@ function Home() {
 
                 <div className="item-container">
                     <div className="image-container">
-                        <img className="image" src={services2} alt="" />
+                        <img className="image" src={services2} alt="Vehicle chauffer services" />
                     </div>
                     <div className="text-container">
                         <h3>Vehicle chauffer services</h3>
@@ -195,7 +195,7 @@ function Home() {
 
                 <div className="item-container">
                     <div className="image-container">
-                        <img className="image" src={services3} alt="" />
+                        <img className="image" src={services3} alt="Event transportation" />
                     </div>
                     <div className="text-container">
                         <h3>Event transportation</h3>
@@ -214,7 +214,7 @@ function Home() {
 
                 <div className="item-container">
                     <div className="image-container">
-                        <img className="image" src={services4} alt="" />
+                        <img className="image" src={services4} alt="Daily/weekly booking in Zambia" />
                     </div>
                     <div className="text-container">
                         <h3>Daily/weekly booking in Zambia</h3>
@@ -283,7 +283,7 @@ function Home() {
 
                     <div className="reviewer-container">
                         <div className="image-container">
-                            <img className='reviewer-image' src={reviewerIcon} alt="" />
+                            <img className='reviewer-image' src={reviewerIcon} alt="blank reviewer image" />
                         </div>
                         <p>
                             Mark
@@ -311,7 +311,7 @@ function Home() {
 
                     </div>
                     <p>
-                        This trip was one of the best in our lives, and the fact that we lived in this luxurious villa made it simply unforgettable! Thank you for giving us such a wonderful holiday, we will definitely come back to you again!
+                        We have known Robin since 1997 and have travelled extensively throughout Zambia with him by the steering wheel over the years. He is a solid, dependable, calm, nice person and a good safe driver that looks after his passengers and the vehicle he is in charge of.
                     </p>
 
                     <div className='quote-icon'>
@@ -322,10 +322,10 @@ function Home() {
 
                     <div className="reviewer-container">
                         <div className="image-container">
-                            <img className='reviewer-image' src={reviewer1} alt="" />
+                            <img className='reviewer-image' src={reviewerIcon} alt="blank reviewer image" />
                         </div>
                         <p>
-                            Anthony Bruff
+                            Monica
                         </p>
                     </div>
                 </div>
@@ -361,7 +361,7 @@ function Home() {
 
                     <div className="reviewer-container">
                         <div className="image-container">
-                            <img className='reviewer-image' src={reviewer1} alt="" />
+                            <img className='reviewer-image' src={reviewer1} alt="reviewer photo" />
                         </div>
                         <p>
                             Anthony Bruff

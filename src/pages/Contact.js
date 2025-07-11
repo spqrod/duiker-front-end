@@ -7,6 +7,7 @@ import { ReactComponent as WhatsappIcon } from "../images/whatsapp.svg";
 import Transition from '../components/Transition.js';
 
 function Contact() {
+
   return (
 
     <main className="contact">

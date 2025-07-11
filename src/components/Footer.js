@@ -48,7 +48,7 @@ function Footer() {
             <Link className='menu-link' to="/reserve">Reserve</Link>
             <Link className='menu-link' to="/services">Services</Link>
             <Link className='menu-link' to="/contact">Contact</Link>
-            <Link className='menu-link' to="/about">About</Link>
+            {/* <Link className='menu-link' to="/about">About</Link> */}
             <Link className='menu-link' to="/privacy">Privacy Policy</Link>
             <Link className='menu-link' to="/terms">Terms of Service</Link>
         </div>

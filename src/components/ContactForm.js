@@ -1,25 +1,106 @@
 import React from 'react';
 import '../styles/contact-form.css';
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 
 function ContactForm() {
 
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        phone: '',
-        message: '',
-      });
+    const [dialogTextForMessageResult, setDialogTextForMessageResult] = useState("");
+
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.REACT_APP_GOOGLE_CAPTCHA_SITE_KEY}`;
+        script.async = true;
+        document.body.appendChild(script);
     
-      const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-      };
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
+
+    const api = {
+        sendEmail: function(data) {
+            const fetchURL = "/api/contact";
+            const fetchOptions = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            };
+            return fetch(fetchURL, fetchOptions)
+                .then(response => response.json())
+        }
+    };
+
+    const controller = {
+
+        handleSubmit: async function(e) {
+
+            e.preventDefault();
+            const token = await controller.executeRecaptcha();
+
+            const { name, email, phone, message } = e.target.elements;
+            
+            const formData = {
+                name: name.value,
+                email: email.value,
+                phone: phone.value,
+                formMessage: message.value,
+            }
+
+            controller.sendEmail({ token, ...formData });
+        },
+
+        updateDialogTextWithMessageResult: function(success) {
+            const successMessage = "Thank you for your message! We will get in touch shortly.";
+            const failureMessage = "Something went wrong. Please get in touch with us in a different way.";
+            if (success) 
+                setDialogTextForMessageResult(successMessage);
+            else 
+                setDialogTextForMessageResult(failureMessage);
+        },
+
+        sendEmail: function(data) {
+            setDialogTextForMessageResult("Sending message...");
+            display.showDialog();
+            api.sendEmail(data)
+                .then((response) => {
+                    display.resetFormAfterSubmit();
+                    controller.updateDialogTextWithMessageResult(response.success);
+                });
+        },
+
+        executeRecaptcha: function() {
+            return new Promise((resolve) => {
+                window.grecaptcha.ready(() => {
+                window.grecaptcha
+                    .execute(process.env.REACT_APP_GOOGLE_CAPTCHA_SITE_KEY, { action: 'submit' })
+                    .then((token) => {
+                    resolve(token);
+                    });
+                });
+            });
+        }
+    };
+
+    const display = {
+       
+        showDialog: function() {
+            const dialog = document.querySelector(".dialog");
+            dialog.showModal();
+        },
+
+        resetFormAfterSubmit() {
+            const form = document.querySelector(".form-container");
+            form.reset();
+        }
+    };
     
   return (
     <div className="contact-form">
 
-        <form className="form-container">
+        <form className="form-container" onSubmit={controller.handleSubmit}>
 
             <div className="form-row personal-details">
                 <div className="label-and-line-container">
@@ -33,10 +114,8 @@ function ContactForm() {
                     <div className="input-container">
                         <input 
                             type="text" 
-                            name="fullName"
-                            value={formData.fullName}
-                            onChange={handleInputChange}
-                            placeholder="Full Name" 
+                            name="name"
+                            placeholder="Name" 
                             required
                         />
                     </div>
@@ -44,8 +123,6 @@ function ContactForm() {
                         <input 
                             type="email" 
                             name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
                             placeholder="Email Address" 
                             required
                         />
@@ -55,8 +132,6 @@ function ContactForm() {
                         <input 
                             type="tel" 
                             name="phone"
-                            value={formData.phone}
-                            onChange={handleInputChange}
                             placeholder="Phone Number" 
                             required
                         />
@@ -70,18 +145,36 @@ function ContactForm() {
                     <textarea 
                         placeholder="Your Message"
                         name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
                     >
                     </textarea>
                 </div>
             </div>
 
+            <div className="legalConsentCheckboxContainer">
+                <input type="checkbox" className="legalConsentCheckbox" name="legalConsentCheckbox" id="legalConsentCheckbox" required/>
+                <label htmlFor="legalConsentCheckbox" className="legalConsentLabel">
+                    I accept <Link to="/terms">Terms of Service</Link> and <Link to="/privacy">Privacy Policy</Link>
+                </label>
+            </div>
+                
             <div className="button-container">
                 <button type="submit" className="submit-button">Send Message</button>
             </div>        
 
         </form>
+
+        <dialog className="dialog">
+                    <p className="dialogText">{dialogTextForMessageResult}</p>
+                    <form method="dialog">
+                        <button className="button">
+                            Close
+                            <div className="buttonBorder"></div>
+                            <div className="buttonBorder"></div>
+                            <div className="buttonBorder"></div>
+                            <div className="buttonBorder"></div>
+                        </button>
+                    </form>
+        </dialog>
 
     </div>
   );
